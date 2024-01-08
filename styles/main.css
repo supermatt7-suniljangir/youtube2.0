@@ -1,0 +1,6 @@
+@import "./bodyAndHtml/bodyNHtml.css";
+@import "./typography/typo.css";
+@import "./navbar/nav.css";
+@import "./videos-container/videosContainer.css";
+@import "./video-player/player.css";
+@import "logo.css";

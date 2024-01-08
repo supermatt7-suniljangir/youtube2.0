@@ -1,0 +1,23 @@
+.logo-container {
+  z-index: 5;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.logo-container .logo-link {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  transform: scale(1.2);
+}
+.logo-container .logo-link .youtube-logo-txt {
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-weight: 500;
+  font-size: 2rem !important;
+  letter-spacing: 0.01rem;
+}/*# sourceMappingURL=logo.css.map */

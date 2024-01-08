@@ -1,0 +1,21 @@
+// Mixin for absolute positioning with content centered
+@mixin align-abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Mixin for flexbox centering
+@mixin dfc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin dfcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
