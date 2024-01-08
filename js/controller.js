@@ -1,5 +1,4 @@
 import * as model from "./model.js";
-import View from "./view/view.js";
 import HomePageView from "./view/HomePageView.js";
 import VideoView from "./view/VideoView.js";
 import HistoryView from "./view/HistoryView.js";

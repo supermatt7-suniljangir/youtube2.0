@@ -10,8 +10,10 @@ export default class View {
   handleMoreMarkup(handler) {
     document.body.addEventListener("click", (e) => {
       let btn = e.target.closest(".show-more-btn");
+
       if (btn) {
         this.showButton = btn;
+        btn.textContent = "loading videos...";
         handler();
       }
     });
@@ -34,11 +36,5 @@ export default class View {
     this.data = data;
     let html = this._generateMarkup();
     this._parentElement.insertAdjacentHTML("beforeend", html);
-  }
-  _dataReceivedNotice(btn) {
-    btn.classList.add("hidden");
-  }
-  _dataFetchingNotice(btn) {
-    btn.textContent = "loading videos...";
   }
 }
