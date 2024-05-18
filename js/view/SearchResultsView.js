@@ -15,7 +15,7 @@ class SearchResultsView extends View {
         let channelName = item.snippet.channelTitle;
         let title = item.snippet.title;
         let description = item.snippet.description;
-        let thumbnail = item.snippet.thumbnails.high.url;
+        let thumbnail = item.snippet.thumbnails.high? item.snippet.thumbnails.high.url : item.snippet.thumbnails.default.url;
         if (kind !== "youtube#video") return;
         return `<a href="#vid=${id}" class="search-result-video-link">
               <div class="serach-result result-video-box">

@@ -7,6 +7,7 @@ async function controlHomePage(query) {
   try {
     HomePageView._renderSpinner();
     let data = await model.getVIdeosData(`${query}`);
+    console.log(data)
     HomePageView._render(data);
     model.state.query = query;
     model.state.currentPage = HomePageView;
@@ -60,10 +61,10 @@ async function controlVideo(id) {
     let suggestedVideosInfo = await controlSuggestedVideos(`${id}`);
     // get channel information
     let channelInfo = await controlChannel(`${channelId}`);
+    console.log(channelInfo)
     // destructring channel data and making anobject out of it
-    let [channel] = channelInfo.items;
+    let channel = channelInfo.items;
     let {
-      kind,
       statistics: { subscriberCount },
       snippet: {
         thumbnails: {

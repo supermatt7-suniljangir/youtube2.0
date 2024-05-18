@@ -7,7 +7,9 @@ class HomePageView extends View {
   _parentElement = document.querySelector(".home-videos-container");
   _generateMarkup() {
     let data = this.data;
+
     let { items } = data;
+    console.log(data)
     let html = items
       .map((item) => {
         let kind = item.id.kind;
@@ -15,7 +17,8 @@ class HomePageView extends View {
         let channelId = item.snippet.channelId;
         let channelName = item.snippet.channelTitle;
         let title = item.snippet.title;
-        let thumbnail = item.snippet.thumbnails.high.url;
+        let thumbnail = item.snippet.thumbnails.high? item.snippet.thumbnails.high.url : item.snippet.thumbnails.default.url;
+
         // let
         // <iframe
         //   id="videoIframe"
@@ -28,7 +31,7 @@ class HomePageView extends View {
         //   allow="autoplay"
         //   class="hidden"
         // ></iframe>
-        if (kind !== "youtube#video") return;
+        if (kind !== "youtube#video" || title.includes("#shorts") || title.includes("#youtubeshorts")) return;
         return ` <a href="#vid=${id}" class="video-box-link video-link watch-link">
               <div class="video-box">
                 <div class="thumbnail">
