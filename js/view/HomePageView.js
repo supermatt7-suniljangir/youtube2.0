@@ -31,7 +31,7 @@ class HomePageView extends View {
         //   allow="autoplay"
         //   class="hidden"
         // ></iframe>
-        if (kind !== "youtube#video" || title.includes("#shorts") || title.includes("#youtubeshorts")) return;
+        if (kind !== "youtube#video" || title.includes("#shorts") || title.includes("#youtubeshorts") ) return;
         return ` <a href="#vid=${id}" class="video-box-link video-link watch-link">
               <div class="video-box">
                 <div class="thumbnail">

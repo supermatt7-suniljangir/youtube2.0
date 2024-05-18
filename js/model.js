@@ -15,7 +15,7 @@ const state = {
 async function getVIdeosData(query, PageToken) {
   try {
     let data = await FetchData(
-      `search?q=${query}&part=snippet%2Cid&maxResults=50${
+      `search?q=${query}&part=snippet%2Cid&order=relevance&regionCode=US&maxResults=100${
         PageToken ? PageToken : ""
       }`
     );
