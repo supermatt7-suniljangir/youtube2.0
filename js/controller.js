@@ -7,7 +7,7 @@ async function controlHomePage(query) {
   try {
     HomePageView._renderSpinner();
     let data = await model.getVIdeosData(`${query}`);
-    console.log(data)
+    console.log(data);
     HomePageView._render(data);
     model.state.query = query;
     model.state.currentPage = HomePageView;
@@ -39,31 +39,42 @@ async function controlMoreData() {
 }
 async function controlVideo(id) {
   try {
-    document
-      .querySelectorAll("section")
-      .forEach((section) => section.classList.add("hidden"));
+    document.querySelectorAll("section").forEach((section) => section.classList.add("hidden"));
     let data = [];
     VideoView._parentElement.classList.remove("hidden");
     VideoView._renderSpinner();
     // get video data
     let videoData = await model.getVideo(`${id}`);
-    // channel id through video data;
     console.log(videoData);
+
+    if (!videoData || !Array.isArray(videoData.items) || videoData.items.length === 0) {
+      throw new Error('Invalid video data received, data-length: 0');
+    }
+
+// destructuring video
+
     let [video] = videoData.items;
+
+     // add video to the watches history
+     controlSetHistory(video, id);
+
+    // destructuring channel id
     let {
       snippet: { channelId },
     } = video;
 
-    // add video to the watches history
-    controlSetHistory(video, id);
 
-    // manage other data///////////////////////////////////////
+    // manage suggested video///////////////////////////////////////
     let suggestedVideosInfo = await controlSuggestedVideos(`${id}`);
+
     // get channel information
     let channelInfo = await controlChannel(`${channelId}`);
-    console.log(channelInfo)
+      // Check if channelInfo.items is an array and has elements
+      if (!channelInfo || !Array.isArray(channelInfo.items) || channelInfo.items.length === 0) {
+        throw new Error('Invalid channel data received');
+      }
     // destructring channel data and making anobject out of it
-    let channel = channelInfo.items;
+    let [channel] = channelInfo.items;
     let {
       statistics: { subscriberCount },
       snippet: {
@@ -73,6 +84,9 @@ async function controlVideo(id) {
       },
     } = channel;
     let channelData = { logo, subscriberCount, channelId };
+
+   
+    
     // get suggested Videos
     // destructuring suggested videos object
     let { items: suggestedVideosData } = suggestedVideosInfo;
@@ -86,7 +100,11 @@ async function controlVideo(id) {
     // update videos history
     controlGetHistory();
   } catch (err) {
-    VideoView._renderMessage("error playing the video:" + err);
+    VideoView._renderMessage(
+      "error playing the video:" +
+        " " +
+        "please note that the API used in this project is no longer stable and is facing downtime, generally this bug is fixed automatically after some time, so you could try refreshing your browser window. i appologize sincerely and am looking forward for better next time, " + err
+    );
     console.error(err);
   }
 }
@@ -196,19 +214,15 @@ async function controlSearchVideos() {
 function controlHashChange() {
   window.addEventListener("hashchange", function (e) {
     let hash = window.location.hash;
-    initVideoPlayer(hash);
-    controlTagVideos(hash);
-    initHistoryVideos(hash);
+
     if (hash === "" || hash === "#home") {
       model.state.currentPage = HomePageView;
       controlHomePage(model.state.query);
     }
-  });
-
-  let hash = window.location.hash;
   initVideoPlayer(hash);
   controlTagVideos(hash);
   initHistoryVideos(hash);
+});
 }
 
 function controlOnLoad() {

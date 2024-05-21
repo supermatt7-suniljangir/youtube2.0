@@ -1,5 +1,6 @@
 import * as model from "./model.js";
 import HomePageView from "./view/HomePageView.js";
+import VideoView from "./view/VideoView.js";
 
 const hamburger = document.querySelector(".hamburger-menu");
 
@@ -48,6 +49,8 @@ function manipulateSearchPage() {
     .querySelectorAll("section")
     .forEach((section) => section.classList.remove("hidden"));
   document.querySelector("#video-player").classList.add("hidden");
+  VideoView._render("")
+
   document
     .querySelector(".home-videos-mega-container")
     ?.classList.add("hidden");
@@ -71,6 +74,8 @@ function manipulateNavLinks() {
     .querySelectorAll("section")
     .forEach((section) => section.classList.remove("hidden"));
   document.querySelector("#video-player").classList.add("hidden");
+  VideoView._render("")
+
   document
     .querySelector(".home-videos-mega-container")
     ?.classList.remove("hidden");
@@ -88,6 +93,8 @@ function manipulateHistoryPage() {
     .querySelectorAll("section")
     .forEach((section) => section.classList.remove("hidden"));
   document.querySelector("#video-player").classList.add("hidden");
+  VideoView._render("")
+
   document
     .querySelector(".home-videos-mega-container")
     ?.classList.add("hidden");
@@ -105,7 +112,7 @@ function manipulateLogoLink() {
     .querySelectorAll("section")
     .forEach((section) => section.classList.remove("hidden"));
   document.querySelector("#video-player").classList.add("hidden");
-
+VideoView._render("")
   document
     .querySelector(".home-videos-mega-container")
     ?.classList.remove("hidden");

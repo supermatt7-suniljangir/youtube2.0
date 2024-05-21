@@ -5,6 +5,7 @@ class VideoView extends View {
   data;
   _generateMarkup() {
     let data = this.data;
+    if(!data) return;
     // console.log(data);
     let [channleInfo, suggestedVideos, video] = data;
     // destructring video
@@ -26,8 +27,8 @@ class VideoView extends View {
             id="videoPlayerIFrame"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write;picture-in-picture; "
-            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; picture-in-picture;"
+            allowfullscreen 
           ></iframe>
         </div>
         <div class="video-information">
