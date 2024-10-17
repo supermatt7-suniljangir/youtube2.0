@@ -1,0 +1,141 @@
+.navigation-bar {
+  height: 6rem;
+  padding: 1rem 2rem !important;
+}
+.navigation-bar .overlay {
+  position: fixed;
+  width: 110%;
+  left: -2rem;
+  top: -2rem;
+  height: 110%;
+  background: black;
+  opacity: 0.6;
+  z-index: 2;
+}
+.navigation-bar .navigation-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 1rem;
+}
+.navigation-bar .navigation-lists form.nav-search-form {
+  width: 50dvw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.navigation-bar .navigation-lists form.nav-search-form .search-input {
+  padding: 1rem;
+  outline: none;
+  border: 1px solid white;
+  width: 50dvw;
+  background-color: #0c0c0c;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.navigation-bar .navigation-lists form.nav-search-form .search-btn {
+  top: unset;
+  right: 2rem;
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.navigation-bar .navigation-lists form.nav-search-form .search-btn img {
+  width: 2.5rem;
+}
+.navigation-bar .navigation-lists .hamburger-menu {
+  z-index: 5;
+}
+.navigation-bar .navigation-lists .hamburger-menu .hamburger-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.navigation-bar .navigation-lists .hamburger-menu img {
+  width: 2.5rem;
+}
+.navigation-bar .nav-sidebar {
+  transition: all 300ms ease;
+  z-index: 3;
+  transform: translateX(150%);
+  overflow: hidden;
+  height: 100dvh !important;
+  width: 20dvw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #0c0c0c;
+}
+.navigation-bar .nav-sidebar .logo-container {
+  margin: 6rem auto 0 auto;
+}
+.navigation-bar .nav-sidebar .sidebar-lists {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.navigation-bar .nav-sidebar .sidebar-lists a {
+  display: block !important;
+  width: 100% !important;
+  border-radius: 2px;
+}
+.navigation-bar .nav-sidebar .sidebar-lists .nav-sidebar-list {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  background-color: #191919;
+  padding: 1rem 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  transition: all 300ms ease;
+  justify-content: flex-start !important;
+}
+.navigation-bar .nav-sidebar .sidebar-lists .nav-sidebar-list:hover {
+  transform: scale(1.2);
+}
+.navigation-bar .nav-sidebar .sidebar-lists .nav-sidebar-list .nav-sidebar-icon {
+  width: 2.5rem;
+}
+.navigation-bar .nav-sidebar .sidebar-lists .nav-sidebar-list .nav-sidebar-title {
+  font-size: 2rem;
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-bar {
+    padding: 0;
+    width: 100%;
+  }
+  .navigation-bar .navigation-lists .list-yt-logo {
+    bottom: 1rem;
+    position: fixed;
+    left: -0.5rem;
+    width: 15rem;
+  }
+  .navigation-bar .navigation-lists form.nav-search-form {
+    width: 80dvw;
+  }
+  .navigation-bar .navigation-lists form.nav-search-form .search-input {
+    width: 80dvw;
+  }
+  .navigation-bar .navigation-lists .logo-container {
+    transform: scale(0.8);
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .navigation-bar .nav-sidebar {
+    width: 100dvw !important;
+  }
+}/*# sourceMappingURL=nav.css.map */

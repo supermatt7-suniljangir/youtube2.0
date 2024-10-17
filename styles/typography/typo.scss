@@ -1,0 +1,73 @@
+<<<<<<< Updated upstream
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import "../variables\ and\ mixins/var";
+@import "../variables\ and\ mixins/mixins";
+* {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 300%;
+}
+h2 {
+  font-size: 220%;
+}
+h3 {
+  font-size: 160%;
+}
+h4 {
+  font-size: 150%;
+}
+.video-cretor-title {
+  color: $secondary-color;
+}
+.mini-info-span,
+.mini-info-para {
+  font-size: 1.3rem !important;
+  font-weight: 400;
+}
+.artist-name {
+  color: $secondary-color !important;
+}
+=======
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import "../variables\ and\ mixins/var";
+@import "../variables\ and\ mixins/mixins";
+* {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 300%;
+}
+h2 {
+  font-size: 220%;
+}
+h3 {
+  font-size: 160%;
+}
+h4 {
+  font-size: 150%;
+}
+.video-cretor-title {
+  color: $secondary-color;
+}
+.mini-info-span,
+.mini-info-para {
+  font-size: 1.3rem !important;
+  font-weight: 400;
+}
+.artist-name {
+  color: $secondary-color !important;
+}
+>>>>>>> Stashed changes

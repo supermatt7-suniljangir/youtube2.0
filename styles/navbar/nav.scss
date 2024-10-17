@@ -1,0 +1,279 @@
+<<<<<<< Updated upstream
+@import "../variables\ and\ mixins/var";
+@import "../variables\ and\ mixins/mixins";
+.navigation-bar {
+  .overlay {
+    position: fixed;
+    width: 110%;
+    left: -2rem;
+    top: -2rem;
+    height: 110%;
+    background: black;
+    opacity: 0.6;
+    z-index: 2;
+  }
+  height: 6rem;
+  padding: 1rem 2rem !important;
+  .navigation-lists {
+    @include dfc;
+    justify-content: space-between !important;
+    gap: 1rem;
+    form.nav-search-form {
+      width: 50dvw;
+      position: relative;
+      @include dfc;
+      gap: 1rem;
+      .search-input {
+        padding: 1rem;
+        outline: none;
+        border: 1px solid white;
+        width: 50dvw;
+        background-color: $tertiary-background-color;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .search-btn {
+        top: unset;
+        right: 2rem;
+        position: absolute;
+        border: none;
+        background: none;
+        cursor: pointer;
+        img {
+          width: 2.5rem;
+        }
+      }
+    }
+    .hamburger-menu {
+      z-index: 5;
+      .hamburger-btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      img {
+        width: 2.5rem;
+      }
+    }
+  }
+  .nav-sidebar {
+    transition: all 300ms ease;
+    z-index: 3;
+    transform: translateX(150%);
+    overflow: hidden;
+    height: 100dvh !important;
+    width: 20dvw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: $tertiary-background-color;
+    .logo-container {
+      margin: 6rem auto 0 auto;
+    }
+    .sidebar-lists {
+      margin-top: 4rem;
+      @include dfcc;
+      gap: 0.5rem;
+      a {
+        // border: 1px solid aqua;
+        display: block !important;
+        width: 100% !important;
+        border-radius: 2px;
+      }
+      .nav-sidebar-list {
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+        background-color: $background-color;
+
+        padding: 1rem 4rem;
+        width: 100%;
+        @include dfc;
+        // background-color: $background-color;
+        gap: 3rem;
+        transition: all 300ms ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+        justify-content: flex-start !important;
+        .nav-sidebar-icon {
+          width: 2.5rem;
+        }
+        .nav-sidebar-title {
+          font-size: 2rem;
+          text-align: left;
+          text-transform: capitalize;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-bar {
+    padding: 0;
+    width: 100%;
+    .navigation-lists {
+      .list-yt-logo {
+        bottom: 1rem;
+        position: fixed;
+        left: -0.5rem;
+        width: 15rem;
+      }
+      form.nav-search-form {
+        width: 80dvw;
+        .search-input {
+          width: 80dvw;
+        }
+      }
+      .logo-container {
+        transform: scale(0.8);
+        width: max-content;
+      }
+    }
+    .nav-sidebar {
+      width: 100dvw !important;
+    }
+  }
+}
+=======
+@import "../variables\ and\ mixins/var";
+@import "../variables\ and\ mixins/mixins";
+.navigation-bar {
+  .overlay {
+    position: fixed;
+    width: 110%;
+    left: -2rem;
+    top: -2rem;
+    height: 110%;
+    background: black;
+    opacity: 0.6;
+    z-index: 2;
+  }
+  height: 6rem;
+  padding: 1rem 2rem !important;
+  .navigation-lists {
+    @include dfc;
+    justify-content: space-between !important;
+    gap: 1rem;
+    form.nav-search-form {
+      width: 50dvw;
+      position: relative;
+      @include dfc;
+      gap: 1rem;
+      .search-input {
+        padding: 1rem;
+        outline: none;
+        border: 1px solid white;
+        width: 50dvw;
+        background-color: $tertiary-background-color;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .search-btn {
+        top: unset;
+        right: 2rem;
+        position: absolute;
+        border: none;
+        background: none;
+        cursor: pointer;
+        img {
+          width: 2.5rem;
+        }
+      }
+    }
+    .hamburger-menu {
+      z-index: 5;
+      .hamburger-btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      img {
+        width: 2.5rem;
+      }
+    }
+  }
+  .nav-sidebar {
+    transition: all 300ms ease;
+    z-index: 3;
+    transform: translateX(150%);
+    overflow: hidden;
+    height: 100dvh !important;
+    width: 20dvw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: $tertiary-background-color;
+    .logo-container {
+      margin: 6rem auto 0 auto;
+    }
+    .sidebar-lists {
+      margin-top: 4rem;
+      @include dfcc;
+      gap: 0.5rem;
+      a {
+        // border: 1px solid aqua;
+        display: block !important;
+        width: 100% !important;
+        border-radius: 2px;
+      }
+      .nav-sidebar-list {
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+        background-color: $background-color;
+
+        padding: 1rem 4rem;
+        width: 100%;
+        @include dfc;
+        // background-color: $background-color;
+        gap: 3rem;
+        transition: all 300ms ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+        justify-content: flex-start !important;
+        .nav-sidebar-icon {
+          width: 2.5rem;
+        }
+        .nav-sidebar-title {
+          font-size: 2rem;
+          text-align: left;
+          text-transform: capitalize;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-bar {
+    padding: 0;
+    width: 100%;
+    .navigation-lists {
+      .list-yt-logo {
+        bottom: 1rem;
+        position: fixed;
+        left: -0.5rem;
+        width: 15rem;
+      }
+      form.nav-search-form {
+        width: 80dvw;
+        .search-input {
+          width: 80dvw;
+        }
+      }
+      .logo-container {
+        transform: scale(0.8);
+        width: max-content;
+      }
+    }
+    .nav-sidebar {
+      width: 100dvw !important;
+    }
+  }
+}
+>>>>>>> Stashed changes

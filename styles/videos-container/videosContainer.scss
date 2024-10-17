@@ -1,0 +1,316 @@
+@import "../variables\ and\ mixins/var";
+@import "../variables\ and\ mixins/mixins";
+.all-videos-container {
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - 7rem);
+  position: relative;
+  .home-videos-mega-container {
+    position: relative;
+    width: 100%;
+    height: 100% !important;
+
+    .showing-results-for-heading {
+      margin: 1rem;
+    }
+    .home-videos-container {
+      padding: 1rem 1rem 5rem 1rem;
+      width: 100%;
+      height: 100%;
+      @include dfc;
+      flex-wrap: wrap;
+      column-gap: 2rem;
+      row-gap: 2rem;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .video-link {
+        border-radius: 5px;
+        overflow: hidden;
+        width: 30%;
+        height: 30rem;
+        display: block;
+        background-color: $tertiary-background-color;
+        .video-box {
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          .thumbnail {
+            position: relative;
+            width: 100%;
+            height: 70%;
+            overflow: hidden;
+            object-fit: cover;
+            &-pic {
+              object-fit: cover;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0rem;
+            }
+            #videoIframe {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+            }
+          }
+          .video-box-mini-info {
+            position: relative;
+            padding: 1rem;
+            height: 30%;
+            width: 100%;
+            @include dfcc;
+            gap: 0.5rem;
+            align-items: flex-start;
+            .video-title {
+              overflow: hidden;
+              width: 100%;
+              height: 70% !important;
+            }
+            .mini-info-para {
+              position: absolute;
+              bottom: 1rem;
+              right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // search results css
+  .search-results-mega-container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    left: 0;
+    position: absolute !important;
+    .search-results-container {
+      padding: 1rem 1rem 1rem 1rem;
+
+      width: 100%;
+      height: 95%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .search-result-video-link {
+        width: 100%;
+        height: max-content !important;
+        display: block !important;
+        .result-video-box {
+          width: 100%;
+          height: 40dvh;
+          border-radius: 1rem;
+          padding: 1rem;
+          background-color: $tertiary-background-color;
+          @include dfc;
+          align-items: flex-start;
+          gap: 3rem;
+          .search-result-video-thumbnail {
+            width: 35%;
+            height: 100%;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            .search-result-video-thumbnail-pic {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .search-result-video-info {
+            padding: 1rem;
+            width: 65%;
+            @include dfcc;
+            gap: 0.3rem;
+            align-items: flex-start;
+            .mini-description {
+              font-size: 130%;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .history-videos-mega-container {
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    position: absolute !important;
+    .history-options {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      .clear-history {
+        background-color: $tertiary-background-color;
+        border: 1px solid $secondary-color;
+        padding: 0.2rem 1rem;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    }
+    .history-videos-container {
+      height: clamp(max-content, max-content, 100%) !important;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+
+      .history-video-link {
+        width: 22%;
+        .history-video-box {
+          width: 100% !important;
+          height: 20rem;
+          @include dfcc;
+          gap: 0.5rem;
+          overflow: hidden;
+          background-color: $tertiary-background-color;
+          border-radius: 0.5rem;
+          .history-video-thumbnail {
+            object-fit: cover;
+            width: 100% !important;
+            height: 70%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .all-videos-container {
+    height: calc(100vh - 6rem);
+    .home-videos-mega-container {
+      position: relative !important ;
+      width: 100%;
+      height: 100%;
+      inset: unset;
+      .home-videos-container {
+        padding: 1rem 1rem 5rem 1rem;
+        row-gap: 5rem;
+        column-gap: 0;
+        .video-link {
+          width: 90%;
+          height: 35dvh;
+          .video-box {
+            position: relative;
+            .thumbnail {
+              height: 75%;
+              #videoIframe {
+                display: none !important;
+              }
+            }
+            .video-box-mini-info {
+              height: 25%;
+              justify-content: flex-start;
+              align-items: flex-start;
+              .video-title {
+                height: 2.5rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // managing serach container:  .search-results-mega-container {
+
+  .search-results-mega-container {
+    width: 100%;
+    height: 100%;
+    inset: unset !important;
+    position: relative !important;
+    .search-results-container {
+      .search-result-video-link {
+        width: 100%;
+        height: max-content !important;
+        display: block !important;
+        .result-video-box {
+          height: 35dvh !important;
+          @include dfcc;
+          align-items: unset !important;
+          gap: 2rem;
+          .search-result-video-thumbnail {
+            width: 100% !important;
+            height: 75% !important;
+            .search-result-video-thumbnail-pic {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .search-result-video-info {
+            width: 100% !important;
+            height: 25% !important;
+            gap: 0rem;
+            .mini-description {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // managing history container: ;
+  .history-videos-mega-container {
+    height: 100%;
+    position: relative !important;
+    inset: unset !important;
+    .history-options {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      .clear-history {
+        background-color: $tertiary-background-color;
+        border: 1px solid $secondary-color;
+        padding: 0.2rem 1rem;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    }
+    .history-videos-container {
+      margin-top: 1rem;
+      height: clamp(max-content, max-content, 100%) !important;
+      padding: 0 0 2rem 0;
+      justify-content: center;
+      .history-video-link {
+        width: 45% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .all-videos-container {
+    .home-videos-mega-container {
+      .home-videos-container {
+        row-gap: 2rem;
+        column-gap: 0;
+        .video-link {
+          width: 97%;
+        }
+      }
+    }
+  }
+
+  // managing history for ultra small devices
+  .history-videos-mega-container {
+    .history-videos-container {
+      .history-video-link {
+        width: 85% !important;
+      }
+    }
+  }
+}
